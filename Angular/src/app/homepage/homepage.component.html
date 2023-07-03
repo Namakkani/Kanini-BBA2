@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Landing Page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Add some padding to the sections for better visibility */
+    section {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+  </style>
+
+</head>
+
+<body data-spy="scroll" data-offset="50">
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">info@anhospital.com</a>
+        <i class="bi bi-phone"></i> +91 4224 500 000
+      </div>
+      <div class="d-none d-lg-flex social-links align-items-center">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+      <div class="logo-container me-auto">
+        <h1 class="logo"><a href="#" style="text-decoration: none;"> A&N HOSPITAL</a></h1>
+        <p class="tagline"> We collaborate for better healthcare</p>
+      </div>
+  
+      <a href="index.html" class="logo me-auto">
+        <img src="../../assets/Images/an_logo.jpg" alt="" class="img-fluid" height="150" width="70">
+      </a>
+  
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul class="nav">
+          <!-- <li class="nav-item"><a class="nav-link scrollto active" href="#hero">Home</a></li> -->
+          <button (click)="scrollToId('hero')" style="border-color: white;background-color:white;border: none;">Home</button>
+          <!-- <li class="nav-item"><a class="nav-link scrollto" href="#about" (click)="scrollToId('about')">About</a></li> -->
+          <button (click)="scrollToId('about')" style="border-color: white;background-color: white;border: none;">About</button>
+          <!-- <li class="nav-item"><a class="nav-link scrollto" href="#services">Services</a></li> -->
+          <button (click)="scrollToId('services')" style="border-color: white;background-color: white;border: none;">Services</button>
+          <!-- <li class="nav-item"><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
+          <button (click)="scrollToId('contact')" style="border-color: white;background-color: white;border: none;">Contact</button>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle d-md-none"></i>
+      </nav>
+  
+      <button class="appointment-btn scrollto d-none d-md-block" (click)="loginPage()">Login/Signup</button>
+
+    </div>
+  </header>
+
+   
+   <section id="hero" class="d-flex align-items-center">
+    <div class="container">
+      <h1>Welcome to A&N Hospital</h1>
+      <h2>" India's best multi-speciality hospital"</h2>
+      <a href="#about" class="btn-get-started scrollto">Get Started</a>
+    </div>
+  </section> 
+
+  <main id="main">
+    <section id="why-us" class="why-us">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-4 d-flex align-items-stretch">
+            <div class="content">
+              <h3> Your health is our wealth</h3>
+              <p>
+                Information about dosage, medication administration or disease precautions will help with treatment and save time for both patient and doctor.Constant communication creates trust. Trust ultimately leads to improved loyalty. The relationships between doctors and patients are extremely important for the development of a hospital.
+              </p>
+              <div class="text-center">
+      </div>
+            </div>
+          </div>
+          <div class="col-lg-8 d-flex align-items-stretch">
+            <div class="icon-boxes d-flex flex-column justify-content-center">
+              <div class="row">
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-receipt"></i>
+                    <h4>Reliability</h4>
+                    <p> <span style="font-weight: bold;">WE WANT TO BE KNOWN AS RELIABLE </span> <br>  We are committed to providing our reliability by delivering the best possible care and treatment</p>
+                  </div>
+                </div>
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-cube-alt"></i>
+                    <h4>Responsibility</h4>
+                    <p><span style="font-weight: bold;">WE ARE MOTIVATED BY RESPONSIBILITY </span> <br> We always strive to do everything in our capacity to serve our patients better</p>
+                  </div>
+                </div>
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-images"></i>
+                    <h4>Respect</h4>
+                    <p><span style="font-weight: bold;">WE TREAT OTHERS AS WE EXPECT TO BE TREATED </span> <br>We always treat people with courtesy, politeness and kindness</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+        </div>
+
+      </div>
+    </section> 
+
+    <div class="row row-cols-1 row-cols-md-3 g-4" id="services">
+      <div class="col">
+        <div class="card h-100">
+          <img src="../../assets/Images/hs1.jpg" class="card-img-top"
+            alt="Skyscrapers" />
+          <div class="card-body">
+            <h5 class="card-title">Experienced  specialists</h5>
+            <p class="card-text">
+              Experienced  specialists: Our hospital is staffed with a 
+              team of highly skilled and experienced medical professionals who are dedicated 
+              to providing top-quality care. With their expertise and knowledge, you can trust
+               that you are in capable hands throughout your healthcare journey.
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 10 mins ago</small>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="../../assets/Images/hs2.jpg" class="card-img-top"
+            alt="Los Angeles Skyscrapers" />
+          <div class="card-body">
+            <h5 class="card-title">Advanced Facilities and Technology</h5>
+            <p class="card-text">Advanced Facilities and Technology: We pride ourselves on 
+              having state-of-the-art facilities and the latest medical technology. Our hospital 
+              is equipped with advanced diagnostic tools and treatment options to ensure accurate
+               diagnoses and effective treatments. We continually invest in upgrading our 
+               facilities to provide the best possible care to our patients.
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 10 mins ago</small>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="../../assets/Images/hs3.jpg" class="card-img-top"
+            alt="Palm Springs Road" />
+          <div class="card-body">
+            <h5 class="card-title">Patient Care</h5>
+            <p class="card-text">
+              Patient Care: At our hospital, we prioritize the needs and comfort of 
+              our patients. Our healthcare approach is centered around you, ensuring personalized
+               care tailored to your specific condition and preferences. We strive to create a 
+               warm and welcoming environment where you feel heard, respected, and supported
+                throughout your treatment.
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 10 mins ago</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container-fluid">
+
+        <div class="row" style="display: flex!;">
+          <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative">
+            <a href="https://www.youtube.com/watch?v=wKUsifHnSX0&t=2s" class="glightbox play-btn mb-4"></a>
+          </div>
+
+          <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+            <h3>Here's why you should choose us:</h3>
+            <p>We have modern and well-equipped facilities, including advanced diagnostic tools and cutting-edge technology, to ensure accurate diagnoses and effective treatments. From routine check-ups to specialized treatments, we offer a wide range of medical services to address all your healthcare needs under one roof.</p>
+
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-fingerprint"></i></div>
+              <h4 class="title"><a href="">Comprehensive Range of Services</a></h4>
+              <p class="description">Comprehensive Range of Services: Our hospital offers a wide range of medical services to cater to all your healthcare needs. From preventive care and routine check-ups to specialized treatments and surgical procedures, we have you covered. Our multidisciplinary approach ensures that you receive comprehensive and integrated care under one roof.</p>
+            </div>
+
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-gift"></i></div>
+              <h4 class="title"><a href="">Exceptional Patient Safety Standards</a></h4>
+              <p class="description">Exceptional Patient Safety Standards: Your safety is our utmost priority. We maintain stringent protocols and adhere to international standards to ensure a safe and secure environment for our patients. From rigorous infection control measures to robust medication management systems, we leave no stone unturned in providing you with the highest level of patient safety.</p>
+            </div>
+
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-atom"></i></div>
+              <h4 class="title"><a href="">Compassionate and Supportive Staff</a></h4>
+              <p class="description">Compassionate and Supportive Staff: Our dedicated healthcare team is not only highly qualified but also compassionate and empathetic. We understand that seeking medical care can be overwhelming, and our staff is committed to providing you with the support and reassurance you need. From our doctors and nurses to our support staff, everyone is here to guide you through your healthcare journey with kindness and understanding.</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Gallery Section ======= -->
+    <section id="gallery" class="gallery">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Gallery</h2>
+          <p>Explore our mesmerizing gallery showcasing moments of hope, healing, and compassionate care</p>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row g-0">
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../../assets/Images/gallery-1.jpg" class="galelry-lightbox">
+                <img src="../../assets/Images/gallery-1.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../../assets/Images/gallery-2.jpg" class="galelry-lightbox">
+                <img src="../../assets/Images/gallery-2.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../../assets/Images/gallery-3.jpg" class="galelry-lightbox">
+                <img src="../../assets/Images/gallery-3.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../../assets/Images/gallery-4.jpg" class="galelry-lightbox">
+                <img src="../../assets/Images/gallery-4.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../../assets/Images/gallery-5.jpg" class="galelry-lightbox">
+                <img src="../../assets/Images/gallery-5.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../../assets/Images/gallery-6.jpg" class="galelry-lightbox">
+                <img src="../../assets/Images/gallery-6.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../../assets/Images/gallery-7.jpg" class="galelry-lightbox">
+                <img src="../../assets/Images/gallery-7.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../../assets/Images/gallery-8.jpg" class="galelry-lightbox">
+                <img src="../../assets/Images/gallery-8.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      
+    </section><!-- End Gallery Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact Us</h2>
+          <p>Reach out to us easily through our hospital contact form. We're here to assist you with your inquiries and requests.</p>
+        </div>
+      </div>
+
+      <div> 
+        <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980063.875601981!2d75.64294088749995!3d13.049599200000015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52663852a9f0f5%3A0x4e04cf2c1484bf7f!2sZoho%20Technology%20Private%20Limited!5e0!3m2!1sen!2sin!4v1688371886219!5m2!1sen!2sin" frameborder="0" allowfullscreen></iframe>      
+      </div>
+      <div class="container">
+        <div class="row mt-5">
+
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p> A&N Multispeciality Hospital, Anna Nagar,  Sholinganallur, Chennai-600119, Tamil Nadu</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>info@anhospital.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>+91 5445 5443 432</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section> 
+
+  </main>  
+
+  
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3> A&N Hospital</h3>
+            <p>
+              A&N Multispeciality Hospital, <br>
+               Anna Nagar, <br>
+               Sholinganallur, Chennai-600 119, Tamil Nadu <br><br>
+  
+              <strong>Phone:</strong>  +91 5445 5443 432<br>
+              <strong>Email:</strong> info@ anhospital.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Educational Institutions</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Allied Health Sciences</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Nursing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Abmulance</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Pharmacy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Join Our Newsletter</h4>
+            <p>Stay connected with us by joining our newsletter. Get the latest updates and news directly in your inbox.</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span> A&N Multispeciality Hospital</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          Created by Kani
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </footer> 
+    
+
+  
+  
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

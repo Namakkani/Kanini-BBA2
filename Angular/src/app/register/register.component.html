@@ -1,0 +1,186 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <span class="navbar-brand">
+    <img src="../../assets/Images/lotus_icon.jpg" alt="Lotus Icon" width="50" height="50">
+     A&N HOSPITAL
+  </span>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <button (click)="LogOut()" class="btn btn-light btn-lg">HomePage</button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<section class="vh-150" style="background-image: url('../../assets/Images/registration_background.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center; background-attachment: fixed;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem; opacity: 0.8;">
+          <div class="row g-0">
+            <div class="col-md-4 col-lg-5 d-none d-md-block">
+              <!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
+                alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" /> -->
+                <img src="../../assets/Images/registration_vector.jpg"
+                alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" /> 
+            </div>
+            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
+
+
+                <div class="d-flex align-items-center mb-3 pb-1">
+                  <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                  <span class="h1 fw-bold mb-0">Sign Up</span>
+                </div>
+
+                <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
+
+                <form #register_form="ngForm">
+                  <div class="form-outline mb-4">
+                    <input type="text" class="form-control form-control-lg" required pattern="[a-zA-Z0-9]*"
+                      placeholder="Username" id="id" name="id" #id="ngModel" [(ngModel)]="register.id" />
+                    <div *ngIf="(id?.dirty || id?.touched)" class="text-danger">
+                      <div *ngIf="!id?.valid">
+                        <div *ngIf="id.errors?.['required']">
+                          User name is required
+                        </div>
+                        <div *ngIf="id.value && id.errors && !id.errors?.['required']">
+                          Please enter a valid input [Username should not contain special charaters]
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="form-outline mb-4">
+                    <input type="email" class="form-control form-control-lg" placeholder="Email" name="email"
+                      [(ngModel)]="register.email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
+                      #email="ngModel" />
+                    <div *ngIf="email.invalid && email.touched" class="text-danger">
+                      <div *ngIf="email.errors?.['required']">Email is required.</div>
+                      <div *ngIf="email.errors?.['pattern']">Please enter a valid email address.</div>
+                    </div>
+                  </div>
+
+
+                  <div class="form-outline mb-4">
+                    <input type="text" class="form-control form-control-lg" placeholder="First Name"
+                      [(ngModel)]="register.firstName" name="firstName" required pattern="[a-zA-Z]+"
+                      #firstName="ngModel" />
+                    <div *ngIf="firstName.invalid && firstName.touched" class="text-danger">
+                      <div *ngIf="firstName.errors?.['required']">First Name is required.</div>
+                      <div *ngIf="firstName.errors?.['pattern']">Please enter a valid First Name (only alphabets are
+                        allowed).</div>
+                    </div>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="text" class="form-control form-control-lg" placeholder="Last Name"
+                      [(ngModel)]="register.lastName" name="lastName" required pattern="[a-zA-Z]+"
+                      #lastName="ngModel" />
+                    <div *ngIf="lastName.invalid && lastName.touched" class="text-danger">
+                      <div *ngIf="lastName.errors?.['required']">Last Name is required.</div>
+                      <div *ngIf="lastName.errors?.['pattern']">Please enter a valid Last Name (only alphabets are
+                        allowed).</div>
+                    </div>
+                  </div>
+
+
+                  <div class="form-outline mb-4">
+                    <select class="form-control form-control-lg" [(ngModel)]="register.gender" name="gender" required
+                      #gender="ngModel">
+                      <option value="" disabled selected hidden>Select Gender</option>
+                      <option value="female">Female</option>
+                      <option value="male">Male</option>
+                    </select>
+                    <div *ngIf="gender.invalid && gender.touched" class="text-danger">
+                      <div *ngIf="gender.errors?.['required']">Gender is required.</div>
+                    </div>
+                  </div>
+
+
+
+                  <div class="form-outline mb-4">
+                    <select class="form-control form-control-lg" [(ngModel)]="register.role" name="role" required
+                      #role="ngModel">
+                      <option value="" disabled selected hidden>Select Role</option>
+                      <option value="Doctor">Doctor</option>
+                      <option value="Patient">Patient</option>
+                    </select>
+                    <div *ngIf="role.invalid && role.touched" class="text-danger">
+                      <div *ngIf="role.errors?.['required']">Role is required.</div>
+                    </div>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input *ngIf="register.role==='Doctor'" type="text" class="form-control form-control-lg" placeholder="Qualification"
+                      [(ngModel)]="register.qualification" name="qualification" required pattern="[a-zA-Z]+"
+                      #qualification="ngModel" />
+                      
+                       
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input *ngIf="register.role==='Doctor'" type="text" class="form-control form-control-lg" placeholder="Specialization"
+                      [(ngModel)]="register.specialization" name="specialization" required pattern="[a-zA-Z]+"
+                      #qualification="ngModel" />
+                      
+                       
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input *ngIf="register.role==='Doctor'" type="text" class="form-control form-control-lg" placeholder="Years Of Experience"
+                      [(ngModel)]="register.yearsOfExperience" name="yearsOfExperience"
+                      #qualification="ngModel" />
+                      
+                      
+                  </div>
+
+
+                   
+
+
+                  <div class="form-outline mb-4">
+                    <div class="position-relative">
+                      <input type="{{ passwordVisible ? 'text' : 'password' }}" class="form-control form-control-lg"
+                        placeholder="Password" [(ngModel)]="register.passwordClear" name="password" required
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}" #password="ngModel" />
+                  
+                      <span class="position-absolute top-50 end-0 translate-middle-y">
+                        <button class="btn" type="button" (click)="togglePasswordVisibility()">
+                          <span class="fa fa-eye" [class.fa-eye-slash]="passwordVisible"></span>
+                        </button>
+                      </span>
+                    </div>
+                  
+                    <div *ngIf="password.invalid && password.touched" class="text-danger">
+                      <div *ngIf="password.errors?.['required']">Password is required.</div>
+                      <div *ngIf="password.errors?.['pattern']">
+                        Password should contain a minimum of 8 characters with at least 1 uppercase, 1 lowercase, 1 digit, and 1 special character.
+                      </div>
+                    </div>
+                  </div>
+
+                  
+                  
+                  
+                
+                  <div class="pt-3 mb-9">
+                    <button class="btn btn-dark btn-lg btn-block" type="button" (click)="onPost()">Register</button>
+                    <div *ngIf="showError" class="text-danger">Please fill all the fields.</div>
+                  </div>
+
+                  <p class="mb-5 pb-lg-2" style="color: #393f81;">Already have an account?
+                    <a (click)="login_here()" style="color: #393f81;cursor: pointer;">Login here </a>
+                  </p>
+
+                  <span *ngIf="registration_status">Registration successful</span>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
