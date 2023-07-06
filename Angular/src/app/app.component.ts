@@ -11,7 +11,7 @@ import { isEmpty } from 'rxjs';
 })
 export class AppComponent {
   
-  title = 'InternManagementApp';
+  title = 'Hospital Management Web ';
   roleStatus:boolean=false
   role:string=""
   
@@ -22,8 +22,7 @@ export class AppComponent {
   
   constructor( private router : Router   ){
 
-    //  this.login.loggedInUser = null;
-    //this.router.navigate(['/', 'login']);
+     
      this.router.navigate(['/', 'homepage']);
 
     this.role = localStorage.getItem("role");
@@ -40,36 +39,16 @@ export class AppComponent {
     this.router.navigateByUrl('login');
   }
   
-  // check()
-  // {
-    //   console.log('chk');
-    //   this.isLoggedIn();
-    //   console.log(this.isLoggedIn());
-    // }
+   
     
   login : LoginComponent
   isLoggedIn():boolean
   {
-    // if (localStorage.length !== null)
-    // {
-    //   return false;
-    // }
-    // else  { 
-    // return true;
-    // }
-    // console.log(this.login.loggedInUser)
+     
     this.username = localStorage.getItem("UserID");
     console.log(localStorage.getItem("role"));
     return localStorage.getItem("token") !== null && this.router.url !== '/login';
     
   }
-  
-  
-
-  // checkLoggedInUser()
-  // {
-  //   this.isLoggedIn();
-  //   console.log(this.isLoggedIn());
-  // }
   
 }

@@ -1,9 +1,9 @@
-﻿using JWTAuthenticationApp.Models.DTO;
+﻿                                using JWTAuthenticationApp.Models.DTO;
 
-namespace JWTAuthenticationApp.Interfaces
-{
-    public interface ITokenGenerate
-    {
-        public string GenerateToken(UserDTO user);
-    }
-}
+                                namespace JWTAuthenticationApp.Interfaces
+                                {
+                                    public interface ITokenGenerate
+                                    {
+                                        public string GenerateToken(UserDTO user);
+                                    }
+                                }

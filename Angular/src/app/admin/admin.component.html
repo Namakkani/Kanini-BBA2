@@ -22,9 +22,7 @@
       </div>
       <div class="col-12 col-md-6 col-lg-3" *ngFor="let doctor of doctors; let i = index">
         <div class="card mb-4" style="max-width: 400px;">
-          <div class="d-flex align-items-center justify-content-center" style="height: 200px;">
-            <img src="https://mdbootstrap.com/img/new/avatars/{{i + 1}}.jpg" alt="" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover;">
-          </div>
+          
           <div class="card-body text-center">
             <h5 class="card-title">{{doctor.firstName}} {{doctor.lastName}}</h5>
             <div class="text-start">

@@ -26,14 +26,14 @@ export class AdminComponent implements OnInit{
     this.service.getDoctorRequest().subscribe(result=>{
       this.doctors = result;
       this.rowCount = this.doctors.length;
-      // console.log(this.doctors);
+      
     })
     
   }
 
   acceptDoctorRequest(doctor:any)
   {
-    //alert("entered")
+    
     doctor.password="";
     doctor.hashKey="";
     console.log(doctor);
@@ -49,10 +49,6 @@ export class AdminComponent implements OnInit{
 
          this.service.DeleteProduct(doctor.id).subscribe(
           
-          // (result) => { alert("Staff Deleted");},
-          // (error)  => {
-          //   alert("Error");
-          //   }
             
         )
  }

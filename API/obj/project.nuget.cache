@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "i0OymxJA5CMr9mUw2vqPBpuPSRPF8vksqpJ3mVovM0p4JqniHPTfRy+tO2tfzXE+qz/O7pb+q1wJ0Sla8XGKjg==",
+  "dgSpecHash": "8gFXRz49VVC6L54SrhhQj/FWG0/Oj27iUN5Y8WX7ezAHWCFS/6b8rnyfRkJYCsh0orFHRsmljP44gMwFjt5arQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hp\\Downloads\\AngularBigBangAssessment-main\\AngularBigBangAssessment-main\\API\\RoleBasedAuthorization.csproj",
+  "projectFilePath": "D:\\Kanini BBA2\\API\\RoleBasedAuthorization.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hp\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

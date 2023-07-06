@@ -4,10 +4,10 @@
 
 namespace RoleBasedAuthorization.Migrations
 {
-    /// <inheritdoc />
+    
     public partial class Authorization : Migration
     {
-        /// <inheritdoc />
+        
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -66,7 +66,7 @@ namespace RoleBasedAuthorization.Migrations
                 });
         }
 
-        /// <inheritdoc />
+         
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(

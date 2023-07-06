@@ -1,16 +1,8 @@
-<!-- <p>login works!</p>
-    <div class="mb-3">
-        <label class="form-control">User ID</label>
-        <input class="form-control" type="number" placeholder="Enter USer ID" [(ngModel)]="userDTO.userId">
- 
-        <label for="login-password" class="form-label">Password</label>
-        <input type="password" class="form-control" id="login-password" placeholder="Enter your password" [(ngModel)]="userDTO.password">
-    </div>
-    <button type="submit" class="btn btn-primary" (click)="Login()">Login</button> -->
+
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <span class="navbar-brand">
-        <img src="../../assets/Images/lotus_icon.jpg" alt="Lotus Icon" width="50" height="50">
+        <img src="../../assets/Images/st_logo.jpg" alt=" " width="100" height="100">
          A&N HOSPITAL
       </span>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -43,23 +35,7 @@
                 </div>
 
                 <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
-
-                <!-- <div class="form-outline mb-4">
-                          <input type="text" id="form2Example17" class="form-control form-control-lg" placeholder="User Name" [(ngModel)]="userDTO.id"/>
-                        </div> -->
-
-                <!-- User Name In Login Form -->
-                <!-- <div class="form-outline mb-4">
-                          <input type="text" id="form2Example17" class="form-control form-control-lg" placeholder="User Name" [(ngModel)]="userDTO.id" name="username" required pattern="[a-zA-Z0-9]*" #username="ngModel"/> 
-                          <div *ngIf="username.invalid && (username.dirty || username.touched)" class="text-danger">
-                            <div *ngIf="username.errors?.['required']">User Name is required.</div>
-                            <div *ngIf="username.errors?.['pattern']">User Name must not contain Special characters</div>
-                          </div> 
-                        </div> -->
-
-
-              
-                <div class="form-outline mb-4">
+          <div class="form-outline mb-4">
                   <input type="email" class="form-control form-control-lg" placeholder="Email" name="email"
                     [(ngModel)]="userDTO.email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
                     #email="ngModel" />
@@ -93,7 +69,7 @@
                   <button class="btn btn-dark btn-lg btn-block" type="button" (click)="clearForm()">Clear</button>
                 </div>
 
-                <!-- <li aria-disabled="true" class="small text-muted" href="#!">Forgot password?</li> -->
+    
                 <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account?
                   <a (click)="move()" style="color: #393f81;cursor: pointer;">Register here </a>
                 </p>

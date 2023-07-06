@@ -7,7 +7,6 @@
         public string? Password { get; set; }
         public string? Token { get; set; }
         public string? Role { get; set; }
-        /*public byte[]? Password_encrypt { get; set; }
-        public byte[]? HashKey { get; set; }*/
+        
     }
 }

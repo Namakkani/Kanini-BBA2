@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 using RoleBasedAuthorization.Models;
 using RoleBasedAuthorization.Repository.Interfaces;
 using RoleBasedAuthorization.Repository.Services;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace RoleBasedAuthorization.Controllers
 {
@@ -19,30 +22,54 @@ namespace RoleBasedAuthorization.Controllers
         }
 
         [HttpPost]
-        public async Task<Staff> PostStaff(Staff staff)
+        public async Task<ActionResult<Staff>> PostStaff(Staff staff)
         {
-            return await _staffService.PostStaff(staff);
+            try
+            {
+                return await _staffService.PostStaff(staff);
+            }
+            catch (Exception ex)
+            { 
+                Console.WriteLine($"An error occurred while creating the staff: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while creating the staff.");
+            }
         }
 
         [HttpGet]
-        //[Authorize(Roles = "Admin")]
-        public async Task<IEnumerable<Staff>> GetStaff()
+         
+        public async Task<ActionResult<IEnumerable<Staff>>> GetStaff()
         {
-            return await _staffService.GetStaff();
+            try
+            {
+                return await _staffService.GetStaff();
+            }
+            catch (Exception ex)
+            {
+                 
+                Console.WriteLine($"An error occurred while fetching the staff: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while fetching the staff.");
+            }
         }
 
         [HttpDelete("{id}")]
         public async Task<ActionResult<List<Staff>>> DeleteStaff(string id)
         {
-            var staff = await _staffService.DeleteStaff(id);
-
-            if (staff == null)
+            try
             {
-                return NotFound("Staff id not matching");
+                var staff = await _staffService.DeleteStaff(id);
+
+                if (staff == null)
+                {
+                    return NotFound("Staff id not matching");
+                }
+                return Ok(staff);
             }
-            return Ok(staff);
+            catch (Exception ex)
+            {
+                
+                Console.WriteLine($"An error occurred while deleting the staff: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while deleting the staff.");
+            }
         }
-
-
     }
 }

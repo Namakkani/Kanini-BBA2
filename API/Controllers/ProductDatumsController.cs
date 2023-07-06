@@ -19,39 +19,65 @@ namespace RoleBasedAuthorization.Controllers
 
         public ProductDatumsController(IProductServices productServices)
         {
-            _productServices= productServices;
+            _productServices = productServices;
         }
 
         // GET: api/ProductDatums
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ProductDatum>>> GetProducts()
         {
-            return await _productServices.GetProducts();
+            try
+            {
+                return await _productServices.GetProducts();
+            }
+            catch (Exception ex)
+            { 
+                Console.WriteLine($"An error occurred while fetching products: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while fetching products.");
+            }
         }
 
-        // GET: api/ProductDatums/5
+         
         [HttpGet("{id}")]
         public async Task<ActionResult<ProductDatum>> GetProductDatum(string id)
         {
-            var prod = await _productServices.GetProductById(id);
-            if (prod == null)
+            try
             {
-                return NotFound("Product Id not matching");
+                var prod = await _productServices.GetProductById(id);
+                if (prod == null)
+                {
+                    return NotFound("Product Id not matching");
+                }
+                return prod;
             }
-            return prod;
+            catch (Exception ex)
+            {
+                 
+                Console.WriteLine($"An error occurred while fetching the product: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while fetching the product.");
+            }
         }
 
         // PUT: api/ProductDatums/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult>PutProductDatum(string id, ProductDatum productDatum)
+        public async Task<IActionResult> PutProductDatum(string id, ProductDatum productDatum)
         {
-            var prod = await _productServices.UpdateProduct(id, productDatum);
-            if (prod == null)
+            try
             {
-                return NotFound("Product Id not matching");
+                var prod = await _productServices.UpdateProduct(id, productDatum);
+                if (prod == null)
+                {
+                    return NotFound("Product Id not matching");
+                }
+                return Ok(prod);
             }
-            return Ok(prod);
+            catch (Exception ex)
+            {
+                // Handle or log the exception here
+                Console.WriteLine($"An error occurred while updating the product: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while updating the product.");
+            }
         }
 
         // POST: api/ProductDatums
@@ -59,22 +85,38 @@ namespace RoleBasedAuthorization.Controllers
         [HttpPost]
         public async Task<ActionResult<ProductDatum>> PostProductDatum(ProductDatum productDatum)
         {
-            var prod = await _productServices.PostProduct(productDatum);
-            return Ok(prod);
+            try
+            {
+                var prod = await _productServices.PostProduct(productDatum);
+                return Ok(prod);
+            }
+            catch (Exception ex)
+            {
+                
+                Console.WriteLine($"An error occurred while creating the product: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while creating the product.");
+            }
         }
 
         // DELETE: api/ProductDatums/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<ProductDatum>> DeleteProductDatum(string id)
         {
-            var prod = await _productServices.DeleteProduct(id);
-            if (prod == null)
+            try
             {
-                return NotFound("Prod id not matching");
+                var prod = await _productServices.DeleteProduct(id);
+                if (prod == null)
+                {
+                    return NotFound("Product Id not matching");
+                }
+                return Ok(prod);
             }
-            return Ok(prod);    
+            catch (Exception ex)
+            {
+                // Handle or log the exception here
+                Console.WriteLine($"An error occurred while deleting the product: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while deleting the product.");
+            }
         }
-
-       
     }
 }
